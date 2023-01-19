@@ -4,4 +4,4 @@ This is my personal portfolio website, built using React. It showcases my projec
 
 ## Demo
 
-[Live Demo](https://whatsapp-clone-app-fz.netlify.app/)
+[Live Demo](https://fazlolahidev.netlify.app/)
