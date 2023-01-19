@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .formInput {
+    @apply p-3 rounded-md bg-transparent border border-slate-400 focus:outline-none;
+  }
+}
+
+@layer components {
+  html {
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    background-color: #f8f5f1;
+  }
+
+  .heroGrid {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+  }
+
+
+  .scrollMouseGrid {
+    grid-column: 2 / 3;
+  }
+
+  .container {
+    max-width: 1024px;
+    margin-inline: auto;
+    padding: 0.5rem;
+  }
+
+  .containerNav {
+    width: 100%;
+    padding: 0.5rem;
+    
+    position: fixed;
+    top: 0;
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  .skillsWidth {
+    width: min(500px, 100% - 2rem);
+  }
+
+  .bulletPag {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(177, 174, 174);
+    position: absolute;
+    top: 140%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+  }
+
+  .slick-dots li {
+    background: yellow !important;
+  }
+
+  .activePag {
+    background-color: black;
+  }
+
+  .widthTran::before {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    z-index: -99;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+  }
+
+  .widthTran.active::before {
+    width: 100%;
+  }
+
+  .container-qualification {
+    width: min(300px, 100% - 2rem);
+    margin: 30px auto;
+    position: relative;
+  }
+
+  .box::before {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 100%;
+    background: black;
+    position: absolute;
+    left: 50%;
+    top: 5px;
+    transform: translateX(-50%);
+  }
+
+  .box:last-child {
+    height: auto;
+  }
+
+  .box:last-child::before {
+    width: 0;
+  }
+
+  .title::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: black;
+    position: absolute;
+    left: 50%;
+    top: 5px;
+    transform: translateX(-50%);
+  }
+
+  .shape {
+    animation: morph 8s ease-in-out infinite;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transition: all 1s ease-in-out;
+    z-index: 5;
+  }
+
+  @keyframes morph {
+    0% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+
+    50% {
+      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+
+    100% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+  }
+
+  /* Define the animation */
+  @keyframes up-and-down {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  /* Apply the animation to the element */
+  .mouseIconAnimate {
+    animation: up-and-down 1s infinite;
+  }
+}
